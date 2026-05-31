@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MACHU-PICCHU</title>
+  <style>
+    @font-face {
+      font-family: 'AeonikPro';
+      src: url('AeonikPro-Regular.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      width: 100%;
+      background-color: #ffffff;
+      color: #000000;
+      font-family: 'AeonikPro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 16px;
+      letter-spacing: 0;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Fixed header label */
+    .site-label {
+      position: fixed;
+      top: 40px;
+      left: 20px;
+      z-index: 100;
+      font-family: 'AeonikPro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 16px;
+      color: #000000;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    /* Main grid */
+    .grid {
+      width: 100%;
+    }
+
+    /* Each row = one pair of columns */
+    .row {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+    }
+
+    /* Each column = image + credits */
+    .col {
+      width: 50%;
+      flex-shrink: 0;
+    }
+
+    /* Image container — 3:4 ratio, fills col width */
+    .image-block {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+    }
+
+    .image-block img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Placeholder colors */
+    .col-left .image-block {
+      background-color: #ffffff;
+    }
+
+    .col-right .image-block {
+      background-color: #ffffff;
+    }
+
+    /* Credits block */
+    .credits {
+      margin-top: 30px;
+    }
+
+    .col-left .credits {
+      padding-left: 20px;
+      padding-right: 0;
+    }
+
+    /* Right column text aligns to left edge of right image = 50vw */
+    .col-right .credits {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .credits p {
+      font-family: 'AeonikPro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 16px;
+      color: #000000;
+      margin: 0;
+    }
+
+    /* Empty line between credit paragraphs */
+    .credits p + p {
+      margin-top: 16px;
+    }
+
+    .row-spacer {
+      height: 500px;
+    }
+
+    /* Mobile: stack columns */
+    @media (max-width: 768px) {
+      .row {
+        flex-direction: column;
+      }
+
+      .col {
+        width: 100%;
+      }
+
+      .col-right .credits {
+        padding-left: 20px;
+      }
+
+      .row-spacer {
+        height: 120px;
+      }
+    }
+
+    footer {
+  display: flex;
+  width: 100%;
+  padding-bottom: 40px;
+}
+
+.footer-left {
+  width: 50%;
+  padding-left: 20px;
+  line-height: 16px;
+}
+
+.footer-right {
+  width: 50%;
+  line-height: 16px;
+}
+
+footer a {
+  color: #000000;
+  text-decoration: none;
+}
+.image-block {
+  position: relative;
+}
+
+.image-block a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+  </style>
+</head>
+<body>
+
+  <div class="site-label">
+    MACHU-PICCHU COLLECTIVE,<br>
+    ©2026 Ljubljana
+  </div>
+
+  <div class="grid">
+
+    <!-- ============================================================ -->
+    <!-- ROW 1                                                        -->
+    <!-- ============================================================ -->
+    <div class="row">
+
+      <div class="col col-left">
+        <!-- IMAGE: Row 1, Left — replace the empty div with: <img src="your-image.jpg" alt=""> -->
+        <div class="image-block"><img src="adidas-woman-football-slovenia-katjaturk.png" alt=""></div>
+        <!-- CREDITS: Row 1, Left — edit text below -->
+        <div class="credits">
+          <p>
+            Director: Megan Jepson<br>
+            DoPs: Igor Perić<br>
+            Editor: Rebecca Quinn<br>
+            MSE Post-Producer: Lola Cookman
+          </p>
+          <p>
+            MSE Post-Producer: Emily Tomkinson
+          </p>
+          <p>
+            Post: Glassworks<br>
+            Colourist: Vanessa Aparicio<br>
+            Online/VFX: Hannah Wilk<br>
+            Glassworks Post-Producer: Andrew Patrick<br>
+            Collage Design & Motion: Georgia Pedley
+          </p>
+          <p>
+            Composer & Sound designer: Luuk van de Mosselaer<br>
+            Subs + Transcription: Maja Silver<br>
+            Subs: Dyde Schleppi<br>
+            Talent: Katja Turk<br>
+            Sr Manager Brand Activation @ adidas Global: Mark Kutscher<br>
+            Marketing Manager @ IIC: Christoph Schneuwly<br>
+            Senior Marketing Lead: Ben Cohen<br>
+            Agency Creative Director @ SUPERSON: Rachna Dhall-Haasnoot<br>
+            Managing Director @ SUPERSON: Chris Friend<br>
+            Production: CURRENT
+          </p>
+        </div>
+      </div>
+
+      <div class="col col-right">
+        <!-- IMAGE: Row 1, Right — replace the empty div with: <img src="your-image.jpg" alt=""> -->
+        <div class="image-block"><img src="kokosy-band-ljubljana-boris-kokalj-mythological-costume-kinosiska.png" alt=""></div>
+        <!-- CREDITS: Row 1, Right — edit text below -->
+        <div class="credits">
+          <p>
+            Director: Megan Jepson<br>
+            DoPs: Igor Perić<br>
+            Editor: Rebecca Quinn<br>
+            MSE Post-Producer: Lola Cookman
+          </p>
+          <p>
+            MSE Post-Producer: Emily Tomkinson
+          </p>
+          <p>
+            Post: Glassworks<br>
+            Colourist: Vanessa Aparicio<br>
+            Online/VFX: Hannah Wilk<br>
+            Glassworks Post-Producer: Andrew Patrick<br>
+            Collage Design & Motion: Georgia Pedley
+          </p>
+          <p>
+            Composer & Sound designer: Luuk van de Mosselaer<br>
+            Subs + Transcription: Maja Silver<br>
+            Subs: Dyde Schleppi<br>
+            Talent: Katja Turk<br>
+            Sr Manager Brand Activation @ adidas Global: Mark Kutscher<br>
+            Marketing Manager @ IIC: Christoph Schneuwly<br>
+            Senior Marketing Lead: Ben Cohen<br>
+            Agency Creative Director @ SUPERSON: Rachna Dhall-Haasnoot<br>
+            Managing Director @ SUPERSON: Chris Friend<br>
+            Production: CURRENT
+          </p>
+        </div>
+      </div>
+
+    </div>
+    <!-- END ROW 1 -->
+
+    <div class="row-spacer"></div>
+
+    <!-- ============================================================ -->
+    <!-- ROW 2                                                        -->
+    <!-- ============================================================ -->
+    <div class="row">
+
+      <div class="col col-left">
+        <!-- IMAGE: Row 2, Left — replace the empty div with: <img src="your-image.jpg" alt=""> -->
+        <div class="image-block"><a href="https://music.apple.com/us/album/naravni-pojavi/1844967645" target="_blank" rel="noopener"></a><img src="kokosy-naravni-pojavi-album-cover-kid-mud-nature.png" alt=""></div>
+        <!-- CREDITS: Row 2, Left — edit text below -->
+        <div class="credits">
+          <p>
+            Director: Megan Jepson<br>
+            DoPs: Igor Perić<br>
+            Editor: Rebecca Quinn<br>
+            MSE Post-Producer: Lola Cookman
+          </p>
+          <p>
+            MSE Post-Producer: Emily Tomkinson
+          </p>
+          <p>
+            Post: Glassworks<br>
+            Colourist: Vanessa Aparicio<br>
+            Online/VFX: Hannah Wilk<br>
+            Glassworks Post-Producer: Andrew Patrick<br>
+            Collage Design & Motion: Georgia Pedley
+          </p>
+          <p>
+            Composer & Sound designer: Luuk van de Mosselaer<br>
+            Subs + Transcription: Maja Silver<br>
+            Subs: Dyde Schleppi<br>
+            Talent: Katja Turk<br>
+            Sr Manager Brand Activation @ adidas Global: Mark Kutscher<br>
+            Marketing Manager @ IIC: Christoph Schneuwly<br>
+            Senior Marketing Lead: Ben Cohen<br>
+            Agency Creative Director @ SUPERSON: Rachna Dhall-Haasnoot<br>
+            Managing Director @ SUPERSON: Chris Friend<br>
+            Production: CURRENT
+          </p>
+        </div>
+      </div>
+
+      <div class="col col-right">
+        <!-- IMAGE: Row 2, Right — replace the empty div with: <img src="your-image.jpg" alt=""> -->
+        <div class="image-block"><img src="masterchef-luka-pangos-cuttingboard-premium-handcrafted-wood-slovenia.png" alt=""></div>
+        <!-- CREDITS: Row 2, Right — edit text below -->
+        <div class="credits">
+          <p>
+            Director: Megan Jepson<br>
+            DoPs: Igor Perić<br>
+            Editor: Rebecca Quinn<br>
+            MSE Post-Producer: Lola Cookman
+          </p>
+          <p>
+            MSE Post-Producer: Emily Tomkinson
+          </p>
+          <p>
+            Post: Glassworks<br>
+            Colourist: Vanessa Aparicio<br>
+            Online/VFX: Hannah Wilk<br>
+            Glassworks Post-Producer: Andrew Patrick<br>
+            Collage Design & Motion: Georgia Pedley
+          </p>
+          <p>
+            Composer & Sound designer: Luuk van de Mosselaer<br>
+            Subs + Transcription: Maja Silver<br>
+            Subs: Dyde Schleppi<br>
+            Talent: Katja Turk<br>
+            Sr Manager Brand Activation @ adidas Global: Mark Kutscher<br>
+            Marketing Manager @ IIC: Christoph Schneuwly<br>
+            Senior Marketing Lead: Ben Cohen<br>
+            Agency Creative Director @ SUPERSON: Rachna Dhall-Haasnoot<br>
+            Managing Director @ SUPERSON: Chris Friend<br>
+            Production: CURRENT
+          </p>
+        </div>
+      </div>
+
+    </div>
+    <!-- END ROW 2 -->
+
+    <div class="row-spacer"></div>
+
+    <!-- ============================================================ -->
+    <!-- ROW 3                                                        -->
+    <!-- ============================================================ -->
+    <div class="row">
+
+      <div class="col col-left">
+        <!-- IMAGE: Row 3, Left — replace the empty div with: <img src="your-image.jpg" alt=""> -->
+        <div class="image-block"></div>
+        <!-- CREDITS: Row 3, Left — edit text below -->
+        <div class="credits">
+          <p>
+            Director: Megan Jepson<br>
+            DoPs: Igor Perić<br>
+            Editor: Rebecca Quinn<br>
+            MSE Post-Producer: Lola Cookman
+          </p>
+          <p>
+            MSE Post-Producer: Emily Tomkinson
+          </p>
+          <p>
+            Post: Glassworks<br>
+            Colourist: Vanessa Aparicio<br>
+            Online/VFX: Hannah Wilk<br>
+            Glassworks Post-Producer: Andrew Patrick<br>
+            Collage Design & Motion: Georgia Pedley
+          </p>
+          <p>
+            Composer & Sound designer: Luuk van de Mosselaer<br>
+            Subs + Transcription: Maja Silver<br>
+            Subs: Dyde Schleppi<br>
+            Talent: Katja Turk<br>
+            Sr Manager Brand Activation @ adidas Global: Mark Kutscher<br>
+            Marketing Manager @ IIC: Christoph Schneuwly<br>
+            Senior Marketing Lead: Ben Cohen<br>
+            Agency Creative Director @ SUPERSON: Rachna Dhall-Haasnoot<br>
+            Managing Director @ SUPERSON: Chris Friend<br>
+            Production: CURRENT
+          </p>
+        </div>
+      </div>
+
+      <div class="col col-right">
+        <!-- IMAGE: Row 3, Right — replace the empty div with: <img src="your-image.jpg" alt=""> -->
+        <div class="image-block"></div>
+        <!-- CREDITS: Row 3, Right — edit text below -->
+        <div class="credits">
+          <p>
+            Director: Megan Jepson<br>
+            DoPs: Igor Perić<br>
+            Editor: Rebecca Quinn<br>
+            MSE Post-Producer: Lola Cookman
+          </p>
+          <p>
+            MSE Post-Producer: Emily Tomkinson
+          </p>
+          <p>
+            Post: Glassworks<br>
+            Colourist: Vanessa Aparicio<br>
+            Online/VFX: Hannah Wilk<br>
+            Glassworks Post-Producer: Andrew Patrick<br>
+            Collage Design & Motion: Georgia Pedley
+          </p>
+          <p>
+            Composer & Sound designer: Luuk van de Mosselaer<br>
+            Subs + Transcription: Maja Silver<br>
+            Subs: Dyde Schleppi<br>
+            Talent: Katja Turk<br>
+            Sr Manager Brand Activation @ adidas Global: Mark Kutscher<br>
+            Marketing Manager @ IIC: Christoph Schneuwly<br>
+            Senior Marketing Lead: Ben Cohen<br>
+            Agency Creative Director @ SUPERSON: Rachna Dhall-Haasnoot<br>
+            Managing Director @ SUPERSON: Chris Friend<br>
+            Production: CURRENT
+          </p>
+        </div>
+      </div>
+
+    </div>
+    <!-- END ROW 3 -->
+
+    <div class="row-spacer"></div>
+
+    <!-- ============================================================ -->
+    <!-- ROW 4                                                        -->
+    <!-- ============================================================ -->
+    <div class="row">
+
+      <div class="col col-left">
+        <!-- IMAGE: Row 4, Left — replace the empty div with: <img src="your-image.jpg" alt=""> -->
+        <div class="image-block"></div>
+        <!-- CREDITS: Row 4, Left — edit text below -->
+        <div class="credits">
+          <p>
+            Director: Megan Jepson<br>
+            DoPs: Igor Perić<br>
+            Editor: Rebecca Quinn<br>
+            MSE Post-Producer: Lola Cookman
+          </p>
+          <p>
+            MSE Post-Producer: Emily Tomkinson
+          </p>
+          <p>
+            Post: Glassworks<br>
+            Colourist: Vanessa Aparicio<br>
+            Online/VFX: Hannah Wilk<br>
+            Glassworks Post-Producer: Andrew Patrick<br>
+            Collage Design & Motion: Georgia Pedley
+          </p>
+          <p>
+            Composer & Sound designer: Luuk van de Mosselaer<br>
+            Subs + Transcription: Maja Silver<br>
+            Subs: Dyde Schleppi<br>
+            Talent: Katja Turk<br>
+            Sr Manager Brand Activation @ adidas Global: Mark Kutscher<br>
+            Marketing Manager @ IIC: Christoph Schneuwly<br>
+            Senior Marketing Lead: Ben Cohen<br>
+            Agency Creative Director @ SUPERSON: Rachna Dhall-Haasnoot<br>
+            Managing Director @ SUPERSON: Chris Friend<br>
+            Production: CURRENT
+          </p>
+        </div>
+      </div>
+
+      <div class="col col-right">
+        <!-- IMAGE: Row 4, Right — replace the empty div with: <img src="your-image.jpg" alt=""> -->
+        <div class="image-block"></div>
+        <!-- CREDITS: Row 4, Right — edit text below -->
+        <div class="credits">
+          <p>
+            Director: Megan Jepson<br>
+            DoPs: Igor Perić<br>
+            Editor: Rebecca Quinn<br>
+            MSE Post-Producer: Lola Cookman
+          </p>
+          <p>
+            MSE Post-Producer: Emily Tomkinson
+          </p>
+          <p>
+            Post: Glassworks<br>
+            Colourist: Vanessa Aparicio<br>
+            Online/VFX: Hannah Wilk<br>
+            Glassworks Post-Producer: Andrew Patrick<br>
+            Collage Design & Motion: Georgia Pedley
+          </p>
+          <p>
+            Composer & Sound designer: Luuk van de Mosselaer<br>
+            Subs + Transcription: Maja Silver<br>
+            Subs: Dyde Schleppi<br>
+            Talent: Katja Turk<br>
+            Sr Manager Brand Activation @ adidas Global: Mark Kutscher<br>
+            Marketing Manager @ IIC: Christoph Schneuwly<br>
+            Senior Marketing Lead: Ben Cohen<br>
+            Agency Creative Director @ SUPERSON: Rachna Dhall-Haasnoot<br>
+            Managing Director @ SUPERSON: Chris Friend<br>
+            Production: CURRENT
+          </p>
+        </div>
+      </div>
+
+    </div>
+    <!-- END ROW 4 -->
+
+    <div class="row-spacer"></div>
+
+    <!-- ============================================================ -->
+    <!-- ROW 5                                                        -->
+    <!-- ============================================================ -->
+    <div class="row">
+
+      <div class="col col-left">
+        <!-- IMAGE: Row 5, Left — replace the empty div with: <img src="your-image.jpg" alt=""> -->
+        <div class="image-block"></div>
+        <!-- CREDITS: Row 5, Left — edit text below -->
+        <div class="credits">
+          <p>
+            Director: Megan Jepson<br>
+            DoPs: Igor Perić<br>
+            Editor: Rebecca Quinn<br>
+            MSE Post-Producer: Lola Cookman
+          </p>
+          <p>
+            MSE Post-Producer: Emily Tomkinson
+          </p>
+          <p>
+            Post: Glassworks<br>
+            Colourist: Vanessa Aparicio<br>
+            Online/VFX: Hannah Wilk<br>
+            Glassworks Post-Producer: Andrew Patrick<br>
+            Collage Design & Motion: Georgia Pedley
+          </p>
+          <p>
+            Composer & Sound designer: Luuk van de Mosselaer<br>
+            Subs + Transcription: Maja Silver<br>
+            Subs: Dyde Schleppi<br>
+            Talent: Katja Turk<br>
+            Sr Manager Brand Activation @ adidas Global: Mark Kutscher<br>
+            Marketing Manager @ IIC: Christoph Schneuwly<br>
+            Senior Marketing Lead: Ben Cohen<br>
+            Agency Creative Director @ SUPERSON: Rachna Dhall-Haasnoot<br>
+            Managing Director @ SUPERSON: Chris Friend<br>
+            Production: CURRENT
+          </p>
+        </div>
+      </div>
+
+      <div class="col col-right">
+        <!-- IMAGE: Row 5, Right — replace the empty div with: <img src="your-image.jpg" alt=""> -->
+        <div class="image-block"></div>
+        <!-- CREDITS: Row 5, Right — edit text below -->
+        <div class="credits">
+          <p>
+            Director: Megan Jepson<br>
+            DoPs: Igor Perić<br>
+            Editor: Rebecca Quinn<br>
+            MSE Post-Producer: Lola Cookman
+          </p>
+          <p>
+            MSE Post-Producer: Emily Tomkinson
+          </p>
+          <p>
+            Post: Glassworks<br>
+            Colourist: Vanessa Aparicio<br>
+            Online/VFX: Hannah Wilk<br>
+            Glassworks Post-Producer: Andrew Patrick<br>
+            Collage Design & Motion: Georgia Pedley
+          </p>
+          <p>
+            Composer & Sound designer: Luuk van de Mosselaer<br>
+            Subs + Transcription: Maja Silver<br>
+            Subs: Dyde Schleppi<br>
+            Talent: Katja Turk<br>
+            Sr Manager Brand Activation @ adidas Global: Mark Kutscher<br>
+            Marketing Manager @ IIC: Christoph Schneuwly<br>
+            Senior Marketing Lead: Ben Cohen<br>
+            Agency Creative Director @ SUPERSON: Rachna Dhall-Haasnoot<br>
+            Managing Director @ SUPERSON: Chris Friend<br>
+            Production: CURRENT
+          </p>
+        </div>
+      </div>
+
+    </div>
+    <!-- END ROW 5 -->
+
+    <div class="row-spacer"></div>
+
+    <!-- ============================================================ -->
+    <!-- ROW 6                                                        -->
+    <!-- ============================================================ -->
+    <div class="row">
+
+      <div class="col col-left">
+        <!-- IMAGE: Row 6, Left — replace the empty div with: <img src="your-image.jpg" alt=""> -->
+        <div class="image-block"></div>
+        <!-- CREDITS: Row 6, Left — edit text below -->
+        <div class="credits">
+          <p>
+            Director: Megan Jepson<br>
+            DoPs: Igor Perić<br>
+            Editor: Rebecca Quinn<br>
+            MSE Post-Producer: Lola Cookman
+          </p>
+          <p>
+            MSE Post-Producer: Emily Tomkinson
+          </p>
+          <p>
+            Post: Glassworks<br>
+            Colourist: Vanessa Aparicio<br>
+            Online/VFX: Hannah Wilk<br>
+            Glassworks Post-Producer: Andrew Patrick<br>
+            Collage Design & Motion: Georgia Pedley
+          </p>
+          <p>
+            Composer & Sound designer: Luuk van de Mosselaer<br>
+            Subs + Transcription: Maja Silver<br>
+            Subs: Dyde Schleppi<br>
+            Talent: Katja Turk<br>
+            Sr Manager Brand Activation @ adidas Global: Mark Kutscher<br>
+            Marketing Manager @ IIC: Christoph Schneuwly<br>
+            Senior Marketing Lead: Ben Cohen<br>
+            Agency Creative Director @ SUPERSON: Rachna Dhall-Haasnoot<br>
+            Managing Director @ SUPERSON: Chris Friend<br>
+            Production: CURRENT
+          </p>
+        </div>
+      </div>
+
+      <div class="col col-right">
+        <!-- IMAGE: Row 6, Right — replace the empty div with: <img src="your-image.jpg" alt=""> -->
+        <div class="image-block"></div>
+        <!-- CREDITS: Row 6, Right — edit text below -->
+        <div class="credits">
+          <p>
+            Director: Megan Jepson<br>
+            DoPs: Igor Perić<br>
+            Editor: Rebecca Quinn<br>
+            MSE Post-Producer: Lola Cookman
+          </p>
+          <p>
+            MSE Post-Producer: Emily Tomkinson
+          </p>
+          <p>
+            Post: Glassworks<br>
+            Colourist: Vanessa Aparicio<br>
+            Online/VFX: Hannah Wilk<br>
+            Glassworks Post-Producer: Andrew Patrick<br>
+            Collage Design & Motion: Georgia Pedley
+          </p>
+          <p>
+            Composer & Sound designer: Luuk van de Mosselaer<br>
+            Subs + Transcription: Maja Silver<br>
+            Subs: Dyde Schleppi<br>
+            Talent: Katja Turk<br>
+            Sr Manager Brand Activation @ adidas Global: Mark Kutscher<br>
+            Marketing Manager @ IIC: Christoph Schneuwly<br>
+            Senior Marketing Lead: Ben Cohen<br>
+            Agency Creative Director @ SUPERSON: Rachna Dhall-Haasnoot<br>
+            Managing Director @ SUPERSON: Chris Friend<br>
+            Production: CURRENT
+          </p>
+        </div>
+      </div>
+
+    </div>
+    <!-- END ROW 6 -->
+
+  </div><!-- end .grid -->
+
+  <div class="row-spacer"></div>
+
+<footer>
+  <div class="footer-left">
+    Jure Marc + Igor Perič<br>
+    Ljubljana, Slovenia
+  </div>
+  <div class="footer-right">
+    <a href="https://www.instagram.com/machupicchu_______/" target="_blank" rel="noopener">Instagram→</a><br>
+    <a href="mailto:info@machu-picchu.eu">info@machu-picchu.eu</a>
+  </div>
+</footer>
+
+</body>
+</html>
